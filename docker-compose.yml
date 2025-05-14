@@ -1,0 +1,15 @@
+services:
+  my_service:
+    image: personal-elm-olmt-fates-image # Use your existing image name here
+    container_name: personal-elm-olmt-fates # Specify your custom container name
+    hostname: docker
+    user: elm-user # Run the container as the non-root user
+    volumes:
+      - type: bind
+        source: ${PROJECT_DIRECTORY}
+        target: /projects_mirror
+    stdin_open: true
+    tty: true
+
+volumes:
+  projects:
